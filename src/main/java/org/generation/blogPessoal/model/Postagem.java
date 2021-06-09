@@ -37,6 +37,18 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 
+	public Postagem() {
+		
+	}
+	
+	public Postagem(Long id, String titulo, String texto, Date date, Tema tema) {
+		this.id = id;
+		this.titulo = titulo;
+		this.texto = texto;
+		this.date = date;
+		this.tema = tema;
+	}
+	
 	public long getId() {
 		return id;
 	}

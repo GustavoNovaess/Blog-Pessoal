@@ -30,6 +30,17 @@ public class Tema {
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 
+	public Tema() {
+		
+	}
+	
+	public Tema(Long id, String descricao, List<Postagem> postagem) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+		this.postagem = postagem;
+	}
+
 	public long getId() {
 		return id;
 	}
