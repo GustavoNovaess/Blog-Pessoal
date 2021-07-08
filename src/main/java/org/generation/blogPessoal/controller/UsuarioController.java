@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,5 +53,10 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(usuarioService.CadastrarUsuario(usuario));
+	}
+	
+	@PutMapping("/alterar")
+	public ResponseEntity<Usuario> put(@RequestBody Usuario usuario) {
+		return ResponseEntity.ok(usuarioRepository.save(usuario));
 	}
 }
