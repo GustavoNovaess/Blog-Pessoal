@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 
 	@Autowired // Spring fica responsável pela instanciação da interface, todos os serviços da interface são acessados a partir do controller
